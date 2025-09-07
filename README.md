@@ -1,7 +1,5 @@
 
----
 
-````markdown
 # 🩺 **MetaHealth: Smart Diabetes Predictor**  
 
 🌐 **Live Demo:** 👉 [Click Here to Try MetaHealth](https://metahealth-99.streamlit.app/)  
@@ -132,17 +130,6 @@ Or just use the hosted version 👉 [MetaHealth on Streamlit](https://metahealth
 * **Batch Prediction**
   Generates predictions for all patients in uploaded CSV file 📂
 
----
-
-## 🖼️ **App Preview**
-
-👉 *(Screenshots of your app UI can be added here later for better visuals)*
-
----
-
-## 📝 **License**
-
-📜 Licensed under the **MIT License**
 
 ---
 
