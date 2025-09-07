@@ -1,103 +1,133 @@
 
-```markdown
-# MetaHealth: Smart Diabetes Predictor 🩺⚡
+---
 
-MetaHealth is a **Streamlit-based web application** that predicts the likelihood of diabetes in women based on the **Pima Indians Diabetes dataset**.  
-It allows both **model comparison** and **individual patient predictions** using **Logistic Regression** and **Random Forest** models.
+````markdown
+# 🩺 MetaHealth: Smart Diabetes Predictor
+
+AI-powered web app for early **diabetes risk detection** using Logistic Regression and Random Forest models trained on the **Pima Indians Diabetes dataset**.  
+
+Built with **Streamlit**, this app allows both **single-patient predictions** and **batch predictions (CSV upload)**.  
+It also provides **model evaluation metrics** such as ROC curves and feature importance.  
 
 ---
 
-## 🚀 Features
-- 📊 **Model Comparison**  
-  Upload test CSV files and compare Logistic Regression vs Random Forest with:
-  - Classification Report
-  - Confusion Matrix
-  - ROC Curve with AUC
-
-- 🧑‍⚕️ **User Input Prediction**  
-  Enter patient details manually and get:
-  - Probability of diabetes
-  - Risk category (High Risk / No Diabetes)
-
-- 📂 **Reference Test Files**  
-  Comes with **5 pre-sampled test case CSV files** (`testcase1.csv` ... `testcase5.csv`)  
-  to validate model predictions.
+## 📌 Features
+- 🔹 Predict diabetes risk using **two models**:
+  - Logistic Regression
+  - Random Forest
+- 🔹 Input patient details through an **interactive sidebar form**
+- 🔹 Upload a CSV file for **batch predictions**
+- 🔹 View **ROC curves, AUC scores, and feature importance**
+- 🔹 Clean UI with team credits and footer section
 
 ---
 
-## 🏗️ Project Structure
+## 📂 Project Structure
+
+```bash
+METAHEALTH/
+│── app.py                 # Main Streamlit app
+│── requirements.txt       # Dependencies
+│── readme.md              # Project documentation
+│
+├── assets/                # UI assets
+│   ├── logo.png
+│   └── styles.css
+│
+├── data/                  # Dataset
+│   └── pima_diabetes.csv
+│
+├── models/                # Models & training
+│   ├── train_model.py     # Script to train & save models
+│   ├── logistic_model.pkl
+│   ├── random_forest_model.pkl
+│   └── saved/             # Saved models & artifacts
+│       ├── logistic_model.pkl
+│       ├── random_forest_model.pkl
+│       ├── scaler.pkl
+│       ├── metrics.pkl
+│       ├── test_data.pkl
+│       └── README.txt
+│
+└── utils/                 # Helper functions
+    ├── preprocessing.py   # Data cleaning & scaling
+    └── evaluation.py      # Metrics, ROC curve plotting
+````
+
+---
+
+## ⚙️ Setup Instructions
+
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/your-username/METAHEALTH.git
+cd METAHEALTH
 ```
 
-MetaHealth/
-│── app.py                          # Main entry point (Streamlit app)
-│── 1\_Model\_Comparison.py           # Page for model comparison
-│── 2\_User\_Input\_Prediction.py      # Page for user input predictions
-│── utils/
-│   ├── preprocessing.py             # Data cleaning & preprocessing
-│   ├── evaluation.py                # Model evaluation helpers
-│   ├── inference.py                 # Model loading & prediction functions
-│── Test\_Case\_CSV\_Files/
-│   ├── testcase1.csv
-│   ├── testcase2.csv
-│   ├── testcase3.csv
-│   ├── testcase4.csv
-│   ├── testcase5.csv
-│── requirements.txt                 # Dependencies
-│── README.md                        # Project documentation
+### 2️⃣ Create Virtual Environment & Install Dependencies
 
-````
+```bash
+python -m venv venv
+source venv/bin/activate   # On Linux/Mac
+venv\Scripts\activate      # On Windows
 
----
+pip install -r requirements.txt
+```
 
-## ⚙️ Installation & Setup
+### 3️⃣ Train Models (Run Once)
 
-1. **Clone repository**
-   ```bash
-   git clone https://github.com/your-username/MetaHealth.git
-   cd MetaHealth
-````
+This step generates the pre-trained models inside `models/saved/`.
 
-2. **Create virtual environment (recommended)**
+```bash
+python models/train_model.py
+```
 
-   ```bash
-   python -m venv venv
-   source venv/bin/activate   # for Linux/Mac
-   venv\Scripts\activate      # for Windows
-   ```
+### 4️⃣ Run the Streamlit App
 
-3. **Install dependencies**
-
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Run Streamlit app**
-
-   ```bash
-   streamlit run app.py
-   ```
+```bash
+streamlit run app.py
+```
 
 ---
 
-## 📊 Dataset
+## 📊 Usage
 
-We use the **Pima Indians Diabetes Dataset** from [UCI Machine Learning Repository](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv).
+### 🔹 Single Prediction
 
-Features:
+* Enter details like **Glucose, BMI, Age, Pregnancies** etc. in the **sidebar form**
+* Get predictions from **Logistic Regression** and **Random Forest** models
+* View if the models **agree/disagree**
 
-* Pregnancies
-* Glucose
-* BloodPressure
-* SkinThickness
-* Insulin
-* BMI
-* DiabetesPedigreeFunction
-* Age
-* Outcome (0 = No Diabetes, 1 = Diabetes)
+### 🔹 Batch Prediction
+
+* Upload a **CSV file** with these exact column names:
+
+  ```
+  Pregnancies,Glucose,BloodPressure,SkinThickness,Insulin,BMI,DiabetesPedigreeFunction,Age
+  ```
+* Download predictions as a **CSV**
+
+### 🔹 Model Evaluation
+
+* View **ROC Curves**, **AUC scores**, and **Feature Importance**
 
 ---
 
-## 👨‍💻 Team MetaMorphs
+## 📈 Example Output
+
+* **Single Prediction**
+  Logistic Regression → 72% risk
+  Random Forest → 68% risk
+
+* **Batch Prediction**
+  Generates predictions for all patients in uploaded CSV
+
+---
+
+## 👨‍💻 Contributors
+
+Developed by **Team MetaMorphs**
 
 * Vishnu V
 * Vijay V
@@ -106,25 +136,19 @@ Features:
 
 ---
 
-## 🌐 Deployment
+## 🌐 Live Demo
 
-The app can be deployed on:
-
-* [Streamlit Cloud](https://streamlit.io/cloud)
-* Heroku
-* Azure / AWS / GCP
-
-*(Instructions for deployment can be added based on platform chosen)*
+👉 [Hosted App Link](https://your-deployed-streamlit-app-link)
 
 ---
 
-## 📜 License
+## 📝 License
 
-This project is for educational and research purposes.
+This project is licensed under the **MIT License**.
 
 ```
 
+---
 
-
-👉 Do you want me to also **add screenshots / demo GIF** section in the README so your hackathon/demo submission looks more attractive?
+⚡ Do you want me to also include **sample CSV files links** in the README (so users can directly test batch prediction)?
 ```
