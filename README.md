@@ -10,6 +10,11 @@ Built with **Streamlit**, this app allows both **single-patient predictions** an
 It also provides **model evaluation metrics** such as ROC curves and feature importance.  
 
 ---
+## 🌐 Live Demo
+
+👉 [Hosted App Link](https://metahealth-99.streamlit.app/)
+
+---
 
 ## 📌 Features
 - 🔹 Predict diabetes risk using **two models**:
@@ -136,11 +141,7 @@ Developed by **Team MetaMorphs**
 
 ---
 
-## 🌐 Live Demo
 
-👉 [Hosted App Link](https://your-deployed-streamlit-app-link)
-
----
 
 ## 📝 License
 
