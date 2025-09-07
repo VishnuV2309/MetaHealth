@@ -62,20 +62,20 @@ METAHEALTH/
 
 ### 🔹 1. Clone the Repository
 
-```bash
-git clone https://github.com/your-username/METAHEALTH.git
+
+git clone https://github.com/gv-2309/metahealth
 cd METAHEALTH
-```
+
 
 ### 🔹 2. Create Virtual Environment & Install Dependencies
 
-```bash
+
 python -m venv venv
 source venv/bin/activate   # On Linux/Mac
 venv\Scripts\activate      # On Windows
 
 pip install -r requirements.txt
-```
+
 
 ### 🔹 3. Train Models (Run Once)
 
