@@ -12,7 +12,7 @@ It also provides **model evaluation metrics** such as ROC curves and feature imp
 ---
 ## 🌐 Live Demo
 
-👉 [Hosted App Link](https://metahealth-99.streamlit.app/)
+👉 [Hosted App Link][https://metahealth-99.streamlit.app/]
 
 ---
 
