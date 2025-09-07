@@ -64,6 +64,7 @@ METAHEALTH/
 
 
 git clone https://github.com/gv-2309/metahealth
+
 cd METAHEALTH
 
 
@@ -79,15 +80,15 @@ pip install -r requirements.txt
 
 ### 🔹 3. Train Models (Run Once)
 
-```bash
+
 python models/train_model.py
-```
+
 
 ### 🔹 4. Run the App
 
-```bash
+
 streamlit run app.py
-```
+
 
 Or just use the hosted version 👉 [MetaHealth on Streamlit](https://metahealth-99.streamlit.app/)
 
