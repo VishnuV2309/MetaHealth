@@ -134,5 +134,5 @@ Or just use the hosted version 👉 [MetaHealth on Streamlit](https://metahealth
 
 ---
 
-✨ Built with ❤️ by **Team MetaMorphs** for a smarter and healthier future.
+✨ Built by **Team MetaMorphs** for a smarter and healthier future.
 
