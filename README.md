@@ -63,7 +63,7 @@ METAHEALTH/
 ### 🔹 1. Clone the Repository
 
 
-git clone https://github.com/gv-2309/metahealth
+git clone https://github.com/vishnuv2309/metahealth
 
 cd METAHEALTH
 
